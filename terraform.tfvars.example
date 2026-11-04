@@ -1,0 +1,21 @@
+# Copy to terraform.tfvars and fill in values
+# terraform.tfvars is gitignored — never commit db_password
+
+app_name       = "eli-dr-lab"
+environment    = "portfolio"
+
+primary_region = "us-east-1"
+dr_region      = "us-west-2"
+
+primary_instance_type = "t3.micro"
+dr_instance_type      = "t3.micro"
+db_instance_class     = "db.t3.micro"
+
+db_name     = "appdb"
+db_username = "appuser"
+db_password = "CHANGE_ME_use_secrets_manager_in_prod"
+
+# Must be a Route 53 hosted zone you own
+domain_name = "your-domain.com"
+
+health_check_path = "/health"
